@@ -9,10 +9,10 @@ fn main(){
         a.push(stdin.next().unwrap().parse().unwrap());
     }
 
-   println!("{}", count(n, a));
+   println!("{}", count(a));
 }
 
-fn count(n: usize, mut a: Vec<usize>) -> i32 {
+fn count(mut a: Vec<usize>) -> i32 {
     let mut count = 0;
     while a.iter().all(|&x| x % 2 == 0) {
         a.iter_mut().for_each(|x| *x /= 2);
@@ -27,15 +27,15 @@ mod tests {
 
     #[test]
     fn test1() {
-        let n = 4;
+        let _n = 4;
         let a = vec![5, 6, 8, 10];
-        assert_eq!(count(n, a), 0);
+        assert_eq!(count(a), 0);
     }
 
     #[test]
     fn test2() {
-        let n = 6;
+        let _n = 6;
         let a = vec![382253568, 723152896, 37802240, 379425024, 404894720, 471526144];
-        assert_eq!(count(n, a), 8);
+        assert_eq!(count(a), 8);
     }
 }
