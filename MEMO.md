@@ -28,3 +28,29 @@ v.sort_by(|a, b| b.cmp(a)); // sort in descending order
 v.sort(); // sort in ascending order
 v.dedup(); // remove duplicates
 ```
+
+## String
+
+### ends_with
+
+Check if a string ends with a specific substring (case-sensitive).
+
+```rust
+let s = "abcde";
+let t = "de";
+let result = s.ends_with(t);
+println!("{}", result); // true
+```
+
+### truncate
+
+Truncate a string to a specified length by removing characters from the end.
+
+```rust
+let mut s = "abcde".to_string();
+let t = "de";
+if s.ends_with(t) {
+    s.truncate(s.len() - t.len());
+}
+println!("{}", s); // abc
+```
